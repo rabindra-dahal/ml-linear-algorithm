@@ -36,7 +36,8 @@ print("\n--- Evaluation Metrics ---")
 print(f"Mean Squared Error (MSE): {mean_squared_error(y_test, y_pred):.2f}")
 print(f"R-squared (R²) Score: {r2_score(y_test, y_pred):.4f}")
 
-# 7. Predict for a custom new house (e.g., 2000 sq ft, 3 bedrooms)
-new_house = np.array([[2000, 3]])
+# 7. Predict for a custom new house (Pass as a DataFrame with matching column names)
+new_house = pd.DataFrame([[2000, 3]], columns=['Size_SqFt', 'Bedrooms'])
 predicted_price = model.predict(new_house)
+
 print(f"\nPredicted price for a 2000 sq ft house with 3 bedrooms: ${predicted_price[0]:,.2f}")
